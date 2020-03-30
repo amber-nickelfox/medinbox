@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p>Medin Box</p>
+
+<button onclick="nextFunction()">Next</button>
+<br>
+<button onclick="previousFunction()">Previous</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script>
+const socket = io("http://localhost:5000");
+
+      function nextFunction() {
+        socket.emit("message", {
+          data: 'next'
+        });
+      }
+	function previousFunction() {
+        socket.emit("message", {
+          data: 'previous'
+        });
+      }
+</script>
+
+</body>
+</html>
